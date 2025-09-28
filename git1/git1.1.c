@@ -13,34 +13,51 @@ int sum(int a, int b)
 return a+b;
 }
 
+//setup
 //press wsl.exe enter the ubuntu for intellji press exit or logout to exit the enviornment
 //git clone url : copy remote repository to your local: local stuff you wrote before disappear if have
 //git remote add origin  url : link only the remote repo to local repo
 //git clone = "download & link."
 //git remote add origin = "link only."
+//git status : check the untrack file from working dir
 
-
-
-
-//git branch: see whole branch
-//git branch branch_name: add a new branch
-//git checkout branch_name: switch head to branch name
-
-//when create a new feature branch, the old main code will copy to the feature branch as it start
-//git checkout -b new_branch: create the new branch and switch the head to new branch
 //git push -u origin main: push the origin to main and link them
 //git push -u origin feature_branch:
 //Pushes your local branch feature_branch to the remote repository origin.
-//Creates the remote branch feature_branch (if it doesn’t already exist).
+//git push --set-upstream origin main
 //Sets an upstream (tracking) relationship between your local branch and the remote branch.
 
 
+
+//branching
+//different version of the code going in same repository
+//git branch: see whole branch
+//git push --set-upstream origin my-feature: when post new branch in to the remote first
+//after that on the feature branch use git push to push the feature branch to remote feature branch
+
+//to pull the remote branch first time use git switch -c feature origin/feature
+//later can use git fetch to fetch all the remote exist branch at your repository
+//git pull only pull main branch, git fetch -all fetch all branch
+
+//git checkout commit_hash:go back to this version
+//switch between branch use git checkout <>
+
+//when create a new feature branch, the old main code will copy to the feature branch as it start
+//git checkout -b new_branch: create the new branch and switch the head to new branch
+//Creates the remote branch feature_branch (if it doesn’t already exist).
+
+
+
+//remote  workspace: pull(fetch+merge only this branch)
+
+
 //merge and rebase
+//merge two branch by first switch to main then, git merge <function branch>
+//git merge combine the branch from the test branch to the master branch
 //they are all merging feature branch to main branch
 //if the time of adding a commit in feature branch is earlier that commit add in main branch,
-//in rebase: main commit will come earlier that feature branch commit
+//in rebase:all commit in feature branch when rebase will base to the latest commit
 //in merge: main commit will come later that feature branch commit
-//in rebase, feature branch commit will always comes later after the main commit
 //in merge, it totally depends on which branch create the new commit first to put that commit first
 
 //git rebase --continue    # continue after fixing conflict
@@ -54,24 +71,12 @@ return a+b;
 //token: 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
 
 //对于merge conflict
-//发生情况:when two person change the same line(area) in the repository
+//发生情况:when two person change the same line in the repository
+//if person a add line or changing line, while b is changing another line and commit, when a commit, there will be no merge conflict
 //if changing is at different area it won't conflict
 //after solving the conflict, add to staging area and add a new commit can be solve merge conflict
 
-//branching: different version of the code going in same repository 
-//git branch show all branch
-//git branch  <> create a new branch
-//switch between branch use git checkout <>
-//git merge combine the branch from the test branch to the master branch
-//after merge, master branch will have the history changing that test branch have
-//merge two branch by first switch to main then, git merge <function branch>
-//branching are occur at local repository
 
-//when post new branch in to the remote first do git push --set-upstream origin my-feature
-//after that use git push on the feature branch to push the feature branch
-//to pull the remote branch first time use git switch -c feature origin/feature
-//later can use git fetch to fetch all the remote exist branch at your repository
-//remote  workspace: pull(fetch+merge)
 
 
 //undo and recovery

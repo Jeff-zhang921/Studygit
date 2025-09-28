@@ -1,7 +1,4 @@
-
-//default divtool: git config --global diff.tool vscode
-//true
-//system 
+//system
 //git config --global -e (see gitconfig)
 //end of line:\r and \n
 //first do: git init
